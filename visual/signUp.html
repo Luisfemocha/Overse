@@ -33,131 +33,52 @@
         </nav>
     </header>
     <main>
-        <div class="div1">
-            <div class="div2">
-                <center><h1>Reg�strate en <br> nuestra web</h1></center>
-                <form action="index.php" method="POST">
-                    <div class="form-group col-xl-auto">
-                        <label class="sub">Crear registro: </label><br>
-                        <label for="name">Nombre Usuario</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <i class="fa fa-user icon"></i>
-                            </div>
-                            <input type="text" class="form-control" name="name" id="name">
+        <center>
+            <div class="div1">
+                <div class="div2 mx-auto my-4">
+                    <h1>Ingresar</h1>
+                    <form action="index.php" method="POST">
+                        <div class="form-group col-xl-auto">
+                            <label for="id1">ID:</label>
+                            <input type="text" class="form-control" name="id1" id="id1">
                         </div>
-                    </div>
-                    <div class="form-group col-xl-auto">
-                        <label for="email">Correo electr�nico</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <i class="fa fa-envelope icon"></i>
-                            </div>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="example@mail.com">
+                        <div class="form-group col-xl-auto">
+                            <label for="nom1">Nombre: </label>
+                            <input type="text" class="form-control" name="nom1" id="nom1">
                         </div>
-                    </div>
-
-                    <div class="form-group col-xl-auto">
-                        <label for="psw">Contrase�a</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <i class="fas fa-key icon"></i>
-                            </div>
-                            <input type="password" class="form-control" name="psw" id="psw">
+                        <div class="form-group col-xl-auto">
+                            <input type="submit" class="btn btn-light btn-lg btn-block" value="Ingresar" name="ingresar" id="ingresar">
                         </div>
-
-                    </div>
-                    <div class="form-group col-xl-auto">
-                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Agregar" name="agregar" id="agregar">
-                    </div>
-                </form>
-                <hr>
-                <form action="index.php" method="POST">
-                    <div class="form-group col-xl-auto">
-                        <label class="sub">Consultar registro: </label><br>
-                        <label for="search">Buscar Usuario</label>
-                        <input type="text" class="form-control" name="search" id="search">
-                    </div>
-                    <div class="form-group col-xl-auto">
-                        <input type="submit" class="btn btn-success btn-lg btn-block" value="Buscar" name="buscar" id="buscar">
-                    </div>
-                </form>
-                </form>
-                <hr>
-                <form action="index.php" method="POST">
-                    <div class="form-group col-xl-auto">
-                        <label class="sub">Eliminar registro: </label><br>
-                        <label for="delete">Eliminar Usuario</label>
-                        <input type="text" class="form-control" name="delete" id="delete">
-                    </div>
-                    <div class="form-group col-xl-auto">
-                        <input type="submit" class="btn btn-danger btn-lg btn-block" value="Eliminar" name="eliminar" id="eliminar">
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="div2">
+                    <h1>Registrarse</h1>
+                    <form method="POST">
+                        <div class="form-group col-xl-auto">
+                            <label for="id2">ID:</label>
+                            <input type="text" class="form-control" name="id2" id="id2">
+                        </div>
+                        <div class="form-group col-xl-auto">
+                            <label for="nom2">Nombre:</label>
+                            <input type="text" class="form-control" name="nom2" id="nom2">
+                        </div>
+                        <div class="form-group col-xl-auto">
+                            <label for="tel2">Teléfono: (opcional)</label>
+                            <input type="text" class="form-control" name="tel2" id="tel2">
+                        </div>
+                        <div class="form-group col-xl-auto">
+                            <label for="email2">Correo: (opcional)</label>
+                            <input type="text" class="form-control" name="email2" id="email2">
+                        </div>
+                        <div class="form-group col-xl-auto">
+                            <a type="button" class="btn btn-light btn-lg btn-block" onclick="registro()" href="#">Registrarse</a>
+                        </div>
+                    </form>
+                </div>
+                <script src="controlador.js"></script>
             </div>
-            <div>
-                <h1>Resultados:</h1>
-                <h2>
-                    <?php
-                    include("database.php");
-
-                    if(isset($_POST["agregar"])){
-                    //recibir
-                    $n= $_POST["name"];
-                    $m= $_POST["email"];
-                    $p= $_POST["psw"];
-
-                    //conectar
-                    $ops= new database();
-                    $ops->conectarConBaseDatos();
-
-                    //devolver
-                    $resultado= $ops->alterarBaseDatos('Insert into usuarios(usn, mail, psw) values("'.$n.'", "'.$m.'", "'.$p.'")');
-                    if ($resultado){
-                    echo("Se ha creado el usuario");
-                    }
-                    else{
-                    echo"Error.";
-                    }
-                    }
-                    elseif(isset($_POST["buscar"])){
-                    //recibir
-                    $n= $_POST["search"];
-
-                    //conectar
-                    $ops= new database();
-                    $ops->conectarConBaseDatos();
-
-                    //devolver
-                    $resultado= $ops->consultarEnBaseDatos('SELECT * FROM usuarios WHERE usn="'.$n.'"');
-                    echo("Nombre: $n. <br>ID: ".$resultado[0]['id']."<br>Correo: ".$resultado[0]['mail'].". <br>Su clave es de ".strlen($resultado[0]['psw'])." caracteres.");
-                    }
-                    elseif(isset($_POST["eliminar"])){
-                    //recibir
-                    $n= $_POST["delete"];
-
-                    //conectar
-                    $ops= new database();
-                    $ops->conectarConBaseDatos();
-
-                    //devolver
-                    $resultado= $ops->alterarBaseDatos('Delete from usuarios where usn="'.$n.'"');
-                    if ($resultado){
-                    echo("<br>Se ha borrado el usuario.");
-                    }
-                    else{
-                    echo("Error.");
-                    }
-                    }
-                    else{
-                    echo("Bienvenido.");
-                    }
-
-                    ?>
-                </h2>
-            </div>
-        </div>
-    </main>
+        </center>
+</main>
     <footer>
         <hr>
         <p class="bajo">
