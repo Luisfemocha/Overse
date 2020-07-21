@@ -1,0 +1,46 @@
+.cuerpo {
+    background-color: black;
+    font-family: 'Franklin Gothic Medium';
+}
+
+main {
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: white;
+}
+
+.card-group {
+    justify-content: center;
+}
+.imgHome {
+    min-width: 110px;
+    min-height: 110px;
+    max-width: 420px;
+    max-height: 420px;
+    align-self: center;
+}
+
+footer {
+    background-color: #343a40;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.bajo {
+    color: #fff;
+    font-weight: lighter;
+}
+
+.bandera {
+    float: center;
+    margin: 0;
+    position: relative;
+    width: 55px;
+    height: 36.75px;
+    background-image: -webkit-linear-gradient(top, #FCD116 0, #FCD116 50%, #003893 50%, #003893 75%, #CE1126 75%, #CE1126 100%);
+    background-image: linear-gradient(180deg, #FCD116 0, #FCD116 50%, #003893 50%, #003893 75%, #CE1126 75%, #CE1126 100%);
+}

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Overse - Registro</title>
+</head>
+<body class="cuerpo">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Registro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="but.html">Acerca de.</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">Overse</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="div1">
+            <div class="div2">
+                <center><h1>Reg�strate en <br> nuestra web</h1></center>
+                <form action="index.php" method="POST">
+                    <div class="form-group col-xl-auto">
+                        <label class="sub">Crear registro: </label><br>
+                        <label for="name">Nombre Usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-user icon"></i>
+                            </div>
+                            <input type="text" class="form-control" name="name" id="name">
+                        </div>
+                    </div>
+                    <div class="form-group col-xl-auto">
+                        <label for="email">Correo electr�nico</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-envelope icon"></i>
+                            </div>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="example@mail.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xl-auto">
+                        <label for="psw">Contrase�a</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fas fa-key icon"></i>
+                            </div>
+                            <input type="password" class="form-control" name="psw" id="psw">
+                        </div>
+
+                    </div>
+                    <div class="form-group col-xl-auto">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Agregar" name="agregar" id="agregar">
+                    </div>
+                </form>
+                <hr>
+                <form action="index.php" method="POST">
+                    <div class="form-group col-xl-auto">
+                        <label class="sub">Consultar registro: </label><br>
+                        <label for="search">Buscar Usuario</label>
+                        <input type="text" class="form-control" name="search" id="search">
+                    </div>
+                    <div class="form-group col-xl-auto">
+                        <input type="submit" class="btn btn-success btn-lg btn-block" value="Buscar" name="buscar" id="buscar">
+                    </div>
+                </form>
+                </form>
+                <hr>
+                <form action="index.php" method="POST">
+                    <div class="form-group col-xl-auto">
+                        <label class="sub">Eliminar registro: </label><br>
+                        <label for="delete">Eliminar Usuario</label>
+                        <input type="text" class="form-control" name="delete" id="delete">
+                    </div>
+                    <div class="form-group col-xl-auto">
+                        <input type="submit" class="btn btn-danger btn-lg btn-block" value="Eliminar" name="eliminar" id="eliminar">
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h1>Resultados:</h1>
+                <h2>
+                    <?php
+                    include("database.php");
+
+                    if(isset($_POST["agregar"])){
+                    //recibir
+                    $n= $_POST["name"];
+                    $m= $_POST["email"];
+                    $p= $_POST["psw"];
+
+                    //conectar
+                    $ops= new database();
+                    $ops->conectarConBaseDatos();
+
+                    //devolver
+                    $resultado= $ops->alterarBaseDatos('Insert into usuarios(usn, mail, psw) values("'.$n.'", "'.$m.'", "'.$p.'")');
+                    if ($resultado){
+                    echo("Se ha creado el usuario");
+                    }
+                    else{
+                    echo"Error.";
+                    }
+                    }
+                    elseif(isset($_POST["buscar"])){
+                    //recibir
+                    $n= $_POST["search"];
+
+                    //conectar
+                    $ops= new database();
+                    $ops->conectarConBaseDatos();
+
+                    //devolver
+                    $resultado= $ops->consultarEnBaseDatos('SELECT * FROM usuarios WHERE usn="'.$n.'"');
+                    echo("Nombre: $n. <br>ID: ".$resultado[0]['id']."<br>Correo: ".$resultado[0]['mail'].". <br>Su clave es de ".strlen($resultado[0]['psw'])." caracteres.");
+                    }
+                    elseif(isset($_POST["eliminar"])){
+                    //recibir
+                    $n= $_POST["delete"];
+
+                    //conectar
+                    $ops= new database();
+                    $ops->conectarConBaseDatos();
+
+                    //devolver
+                    $resultado= $ops->alterarBaseDatos('Delete from usuarios where usn="'.$n.'"');
+                    if ($resultado){
+                    echo("<br>Se ha borrado el usuario.");
+                    }
+                    else{
+                    echo("Error.");
+                    }
+                    }
+                    else{
+                    echo("Bienvenido.");
+                    }
+
+                    ?>
+                </h2>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p class="bajo">
+            Stardenburdenhardenbart<br>
+            stardenburdenhardenbartCESDE@gmail.com &#x2709; <br>
+            Secretar�a de comunicaciones. CEL: 300 734 2295 &#x2706; <br>
+        </p>
+        <div class="bandera"></div>
+        <p class="bajo">
+            &nbsp;Medell�n <br>
+            &nbsp;Colombia
+        </p>
+    </footer>
+</body>
+</html>
