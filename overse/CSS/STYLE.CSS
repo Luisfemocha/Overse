@@ -63,7 +63,7 @@ a.dropActivo{
 	font-size: 16px;
 	min-height: 40.62em;
 	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(imagen/maxresdefault.jpg);
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(http://localhost/overse/imagen/god.jpg);
 	background-position: center center;
 	background-size: cover;
 	margin-bottom: 3.12em;

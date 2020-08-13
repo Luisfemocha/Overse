@@ -13,7 +13,6 @@
 				<a href="home" >Inicio</a>
 				<a href="tienda">Tienda</a>
 				<a href="registro">Registro</a>
-				<a href="recientes" >Más Recientes</a>
 				<a href="blog">Blog</a>
                 <a href="acercade" class="activo">Acerca de</a>
 				<a href="admin">ADMIN</a>

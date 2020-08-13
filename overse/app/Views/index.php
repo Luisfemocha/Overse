@@ -13,7 +13,6 @@
 				<a href="home" class="activo">Inicio</a>
 				<a href="tienda">Tienda</a>
 				<a href="registro">Registro</a>
-				<a href="recientes">Más Recientes</a>
 				<a href="blog">Blog</a>
 				<a href="acercade">Acerca de</a>
 				<a href="admin">ADMIN</a>
@@ -43,67 +42,34 @@
 				<div class="contenedor-carousel">
 					<div class="carousel">
 						<div class="pelicula">
-							<a href="#"><img src="imagen/FOR.jpg" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/cod.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="imagen/SAN.jpeg" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/days.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="imagen/UNCHA.jpg" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/fifa.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="imagen/TITAN.jpg" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/for.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="imagen/maxresdefault.jpg" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/god.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="img/6.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/MORTAL.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="img/7.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/san.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="img/1.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/TITAN.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="img/2.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/uncha.jpg" alt=""></a>
 						</div>
 						<div class="pelicula">
-							<a href="#"><img src="img/3.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/1.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/2.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/3.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/4.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/5.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/6.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/7.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/1.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/2.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/3.png" alt=""></a>
-						</div>
-						<div class="pelicula">
-							<a href="#"><img src="img/4.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url(); ?>/imagen/war.jpg" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -117,5 +83,5 @@
         
     </footer>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="<?php echo base_url(); ?>/jss/controlador.js"></script>
 </body>
