@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "<?php echo base_url(); ?>/css/style.css">
+    <link rel = "stylesheet" href = "<?php echo base_url(); ?>/css/style.scss">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
 	<title>ACERCA DE - OVERSE</title>
@@ -93,7 +93,7 @@
   				</div>
 				  <div class="card-body">
     			<h5 class="card-title">Yirleyson Toro Ramirez</h5>
-   				<p class="card-text">Soy un programador junior , se utilizar programas como: Phyton y  Netbeans. También trabajo en el desarrollo de páginas web utilizando HTML,JavaScript,php y utilizo herramientas como Booststrap. <br>
+   				<p class="card-text">Programador básico con conocimientos en algunos lenguajes de programación como Java y Phyton. También con conocimiento en desarrollo de paginas web con HTML, JavaScript,Php y CSS, herramientas como Bootstrap.<br>
 				CONTACTO <br>
 				yirleison2008@gmail.com <br>
 				3146019212</p>

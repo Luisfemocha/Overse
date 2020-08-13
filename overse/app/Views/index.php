@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "<?php echo base_url(); ?>/css/style.css">
+    <link rel = "stylesheet" href = "<?php echo base_url(); ?>/css/style.scss">
 
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
 	<title>OVERSE</title>
@@ -80,7 +80,6 @@
     <footer>
 	<p>Secretaría de comunicaciones <br>
 	StardenburdenhardenbartCESDE@gmail.com</p>
-        
     </footer>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="<?php echo base_url(); ?>/jss/controlador.js"></script>
