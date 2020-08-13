@@ -19,4 +19,4 @@ Para poder abrir la página, como no tenemos un servidor online requieres tener 
 
 Si después de instalar los plugins necesarios sigues con problemas para ingresar a nuestra página, no dudes en contactarnos StardenburdenhardenbartCESDE@gmail.com, te daremos asistencia personalizada en el menor tiempo posible.
 
-#GRACIAS POR ELEGIRNOS
+# GRACIAS POR ELEGIRNOS
